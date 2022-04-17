@@ -1,4 +1,3 @@
 FLASK_APP=app
-#FLASK_ENV=production
 FLASK_ENV=development
-SECRET_KEY=development_secret_key
+SECRET_KEY=put_here_your_development_secret_key
