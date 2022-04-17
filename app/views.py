@@ -1,3 +1,6 @@
 """Define your views here."""
+
+
 def index():
-    return 'demo index'
+    """Exampe view for index page."""
+    return 'Hello from Flask Base App'
