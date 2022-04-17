@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "flask_base_app"
+version = "0.0.0"
+description = "Flask developer starter pack"
+authors = ["kamalynx <kamalynxpro@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+python-dotenv = "^0.20.0"
+Flask = "^2.1.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
