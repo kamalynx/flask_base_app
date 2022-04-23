@@ -17,6 +17,13 @@ def create_app():
         log_file = safe_join(app.instance_path, '{0}.log'.format(__name__))
         logging.basicConfig(filename=log_file, level=logging.DEBUG)
 
+    config_file = os.path.join(app.instance_path, 'config.py')
+    if os.path.exists(config_file):
+        app.config.from_pyfile(config_file)
+
+    if not app.secret_key:
+        app.secret_key = os.getenv('SECRET_KEY')
+
     with app.app_context():
         try:
             from . import models
