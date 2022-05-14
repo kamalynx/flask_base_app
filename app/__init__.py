@@ -1,4 +1,5 @@
 """Initialize application."""
+import locale
 import logging
 import os
 
@@ -9,6 +10,11 @@ from werkzeug.utils import safe_join
 def create_app():
     """Create an application's instance."""
     app = Flask(__name__)
+
+    try:
+        locale.setlocale(locale.LC_ALL, '')
+    except locale.Error as err:
+        app.logger.error(err)
 
     if not os.path.exists(app.instance_path):
         os.mkdir(app.instance_path)
